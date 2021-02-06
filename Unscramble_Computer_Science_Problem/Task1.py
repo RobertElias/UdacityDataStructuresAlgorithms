@@ -18,3 +18,22 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
+
+
+def add_numbers(file: list, tel_numbers: set)-> set:
+    
+    
+    for column in [0,1]:
+        temp_numbers = [data[column] for data in file]
+        tel_numbers.update(temp_numbers)
+    return tel_numbers
+
+
+if __name__ == '__main__':
+    
+    tel_numbers = set()
+    
+    tel_numbers = add_numbers(calls, tel_numbers)
+    tel_numbers = add_numbers(texts, tel_numbers)
+    
+    print("There are {} different telephone numbers in the records.".format(len(tel_numbers)))
