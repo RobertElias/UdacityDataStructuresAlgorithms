@@ -2,6 +2,8 @@
 Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
+
+from itertools import chain
 import csv
 
 with open('texts.csv', 'r') as f:
@@ -25,3 +27,22 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+telephone_numbers_in_texts = list(chain.from_iterable(
+    [(sender, reciever) for sender, reciever, _ in texts]))
+
+texters = set(telephone_numbers_in_texts)
+
+callers = set()
+call_recievers = set()
+
+for caller, reciever, _, _ in calls:
+    callers.add(caller)
+    call_recievers.add(reciever)
+
+# telemarkerters don't text or revicieve callers
+possible_telemarkerters = callers - (texters | call_recievers)
+
+print("These numbers could be telemarketers:")
+
+for tel_number in sorted(possible_telemarkerters):
+    print(tel_number)
