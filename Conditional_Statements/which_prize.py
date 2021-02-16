@@ -1,15 +1,15 @@
-points = 174
+# points = 174
 
-if points <= 50:
-    result = "Congratulations! You won a wooden rabbit!"
-elif points <= 150:
-    result = "Oh dear, no prize this time."
-elif points <= 180:
-    result = "Congratulations! You won a wafer-thin mint!"
-else:
-    result = "Congratulations! You won a penguin!"
+# if points <= 50:
+#     result = "Congratulations! You won a wooden rabbit!"
+# elif points <= 150:
+#     result = "Oh dear, no prize this time."
+# elif points <= 180:
+#     result = "Congratulations! You won a wafer-thin mint!"
+# else:
+#     result = "Congratulations! You won a penguin!"
 
-print(result)
+# print(result)
 
 
 print("---------------------------------------------------")
@@ -65,5 +65,30 @@ elif state == "NY":
     total_cost = purchase_amount*(1+tax_amount)
     result = "Since you're from {}, your total cost is {}.".format(
         state, total_cost)
+
+print(result)
+print("=========================================")
+
+
+# points = 174
+
+points = 174  # use this input when submitting your answer
+
+# set prize to default value of None
+prize = None
+
+# use the value of points to assign prize to the correct prize name
+if points <= 50:
+    prize = "wooden rabbit"
+elif 151 <= points <= 180:
+    prize = "wafer-thin mint"
+elif points >= 181:
+    prize = "penguin"
+
+# use the truth value of prize to assign result to the correct message
+if prize:
+    result = "Congratulations! You won a {}!".format(prize)
+else:
+    result = "Oh dear, no prize this time."
 
 print(result)
