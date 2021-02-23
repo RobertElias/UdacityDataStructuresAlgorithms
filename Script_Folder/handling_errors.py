@@ -12,7 +12,10 @@ def party_planner(cookies, people):
     except ZeroDivisionError:
         print("Oops, you entered 0 people will be attending.")
         print("Please enter a good number of people for a party.")
-
+#     except ZeroDivisionError as e:
+#    # some code
+#         print("ZeroDivisionError occurred: {}".format(e))
+#         print("Please enter a good number of people for a party.")
     return(num_each, leftovers)
 
 
